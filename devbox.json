@@ -21,6 +21,7 @@
     "init_hook": [
       "echo 'Welcome to the Boot.dev k8s class!'",
       "bat README.md",
+      "alias stgoland='goland .'",
     ],
     "scripts": {
       "kind-ct": ["task cluster-create-kind"],
