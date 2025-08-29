@@ -1,0 +1,30 @@
+version: "3"
+
+tasks:
+  run:
+    cmds:
+      - CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o notely && ./notely
+    desc: Build Go binary
+  fmt:
+    cmds:
+      - go fmt ./...
+    desc: Format Go code
+  lint:
+    cmds:
+      - staticcheck ./...
+    desc: Lint Go code
+  sec:
+    cmds:
+      - gosec ./...
+    desc: Security checks
+  test:
+    cmds:
+      - go test ./...
+    desc: Run Go tests
+  pre:
+    cmds:
+      - go fmt ./...
+      - staticcheck ./...
+      - gosec ./...
+      - go test ./...
+    desc: Run pre-commit checks
