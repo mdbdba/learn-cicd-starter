@@ -16,6 +16,7 @@
     "gh@2.76.1",
     "pandoc@3.6",
     "go@1.24.5",
+    "turso-cli@1.0.11",
   ],
   "shell": {
     "init_hook": [
